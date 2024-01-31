@@ -39,4 +39,4 @@ function onFormInput(event) {
     };
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-}
+};
