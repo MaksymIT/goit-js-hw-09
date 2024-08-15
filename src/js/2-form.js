@@ -1,48 +1,33 @@
-const formCheck = document.querySelector(".feedback-form");
-formCheck.addEventListener("input", onFormInput);
-const STORAGE_KEY = "feedback-form-state";
-const emailInput = formCheck.querySelector('input[type="email"]');
-const messageTextarea = formCheck.querySelector('textarea');
+const form = document.querySelector('.feedback-form');
+const LOCAL_STORAGE_KEY = 'feedback-form-state';
 
-// Під час завантаження сторінки перевіряємо стан сховища
-window.addEventListener('load', function () {
-    const savedData = localStorage.getItem(STORAGE_KEY);
+let formData = { email: "", message: "" };
 
+document.addEventListener('DOMContentLoaded', () => {
+    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (savedData) {
-        const { email, message } = JSON.parse(savedData);
-        emailInput.value = email;
-        messageTextarea.value = message;
+        formData = JSON.parse(savedData);
+        form.elements.email.value = formData.email || '';
+        form.elements.message.value = formData.message || '';
     }
 });
 
-// Під час сабміту форми очищаємо сховище і поля форми, виводимо дані у консоль
-formCheck.addEventListener("submit", function (event) {
+form.addEventListener('input', event => {
+    formData[event.target.name] = event.target.value.trim();
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData));
+});
+
+form.addEventListener('submit', event => {
     event.preventDefault();
 
-    // Перевірка на заповненість полів
-    if (emailInput.value.trim() === "" || messageTextarea.value.trim() === "") {
-        alert("Будь ласка, заповніть всі поля форми.");
+    if (!formData.email || !formData.message) {
+        alert('Fill please all fields');
         return;
     }
 
-    const formData = {
-        email: emailInput.value,
-        message: messageTextarea.value
-    };
+    console.log(formData)
 
-    console.log(formData);
-
-    // Очищаємо сховище та поля форми
-    localStorage.removeItem(STORAGE_KEY);
-    formCheck.reset();
-});
-
-// Відслідковуємо зміни в полях форми та зберігаємо дані у локальне сховище
-function onFormInput(event) {
-    const formData = {
-        email: emailInput.value,
-        message: messageTextarea.value
-    };
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-};
+    form.reset();
+    formData = { email: "", message: "" };
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+})
