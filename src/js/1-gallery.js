@@ -88,12 +88,12 @@ function createMarkup(images) {
         .join("");
 };
 
-function handleClick(event) {
-    event.preventDefault();
-    if (event.target.nodeName !== "IMG") {
-        return console.log(event.target.dataset.source);
-    }
-};
+// function handleClick(event) {
+//     event.preventDefault();
+//     if (event.target.nodeName !== "IMG") {
+//         return console.log(event.target.dataset.source);
+//     }
+// };
 
 // 
 const lightbox = new SimpleLightbox(".gallery a", {
