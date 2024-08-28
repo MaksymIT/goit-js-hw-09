@@ -1,46 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    
-    <script type="module" crossorigin src="/goit-js-hw-09/assets/styles-8a19706f.js"></script>
-    <script type="module" crossorigin src="/goit-js-hw-09/assets/vendor-10cb7c31.js"></script>
-    <script type="module" crossorigin src="/goit-js-hw-09/assets/1-gallery-8f90bc1e.js"></script>
-    <script type="module" crossorigin src="/goit-js-hw-09/assets/2-form-49ea18b5.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-09/assets/styles-1ce7e1d7.css">
-    <link rel="stylesheet" href="/goit-js-hw-09/assets/vendor-a088063d.css">
-  </head>
-  <body>
 
-    <!-- <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="../2-form.html" class="nav-link">Form</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="../1-gallery.html" class="nav-link">Gallery</a>
-      </li>
-    </ul>
-  </nav>
-</header>
- -->
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./2-form.html" class="nav-link">Form</a>
-      </li>
-    
-      <li class="nav-item">
-        <a href="./1-gallery.html" class="nav-link">Gallery</a>
-      </li>
-    </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Luxe</title>
+  <link rel="icon" type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" />
   
+  <script type="module" crossorigin src="/goit-js-hw-09/assets/styles-48b67d46.js"></script>
+  <script type="module" crossorigin src="/goit-js-hw-09/assets/vendor-10cb7c31.js"></script>
+  <script type="module" crossorigin src="/goit-js-hw-09/assets/1-gallery-8f90bc1e.js"></script>
+  <script type="module" crossorigin src="/goit-js-hw-09/assets/2-form-49ea18b5.js"></script>
+  <link rel="stylesheet" href="/goit-js-hw-09/assets/styles-a13e69e7.css">
+  <link rel="stylesheet" href="/goit-js-hw-09/assets/vendor-a088063d.css">
+</head>
 
-    
-    
-  </body>
+<body>
+  <header>
+    <h1>Hotel Luxe</h1>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#rooms" class="nav-link">Rooms</a></li>
+        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="./2-form.html" class="nav-link">Form</a></li>
+        <li class="nav-item"><a href="./1-gallery.html" class="nav-link">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h2>Welcome to Hotel Luxe</h2>
+      <p>Your perfect getaway awaits. Enjoy luxury, comfort, and style.</p>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+  </section>
+
+  <section id="rooms" class="rooms-section">
+    <h2>Our Rooms</h2>
+    <div class="room">
+      <h3>Deluxe Room</h3>
+      <p>Experience luxury in our Deluxe Rooms, featuring elegant decor and top-notch amenities.</p>
+    </div>
+    <div class="room">
+      <h3>Suite</h3>
+      <p>Indulge in our spacious Suites with stunning views and premium services.</p>
+    </div>
+    <div class="room">
+      <h3>Standard Room</h3>
+      <p>Comfortable and affordable, perfect for a pleasant stay.</p>
+    </div>
+  </section>
+
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Spa and Wellness Center</li>
+      <li>24/7 Room Service</li>
+      <li>Free Wi-Fi</li>
+      <li>Airport Shuttle</li>
+    </ul>
+  </section>
+
+    <p>Check out our <a href="./2-form.html">booking form</a> and <a href="./1-gallery.html">gallery</a> for more
+      information.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Hotel Luxe. All rights reserved.</p>
+  </footer>
+
+  
+  
+</body>
+
 </html>
